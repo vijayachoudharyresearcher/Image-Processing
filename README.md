@@ -1,4 +1,4 @@
-# Image-Processing
+      # Image-Processing
 
 import numpy as np
 
@@ -32,3 +32,17 @@ sp_05 = salt_pepper(0.5)
 
 # Store the resultant image as 'sp_05.jpg'
 cv2.imwrite('sp_05.jpg', sp_05)
+
+
+img = cv2.imread('/content/drive/MyDrive/CannyEdgeDetectionOpenCV/CowpeaICARImages/img2.png')
+canny = cv2.Canny(img, 100, 200)
+
+titles = ['Input-image', 'Internal Structure of CowpeaLeaves']
+images = [img, canny]
+for i in range (2):
+  plt.subplot(1, 2, i+1), plt.imshow(images[i], 'gray')
+  plt.title(titles[i])
+  plt.xticks([]), plt.yticks([])
+
+plt.show()
+
